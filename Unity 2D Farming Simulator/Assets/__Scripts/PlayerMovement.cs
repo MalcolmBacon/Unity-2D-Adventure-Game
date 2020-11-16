@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Reset change to 0
         change = Vector3.zero;
