@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 change;
+    public Vector3 lastFacingDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
+        SetInitialAnimationStates();
+    }
+    void SetInitialAnimationStates()
+    {
+        //Set inital animation states
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
     }
@@ -35,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
         if (Input.GetButtonDown("attack") && state != PlayerState.attack)
         {
-            Debug.Log("Pressed attack");
             StartCoroutine(AttackCoroutine());
         }
         else if (state == PlayerState.walk)
@@ -63,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("moveX", change.x);
             animator.SetFloat("moveY", change.y);
             animator.SetBool("moving", true);
+            lastFacingDirection.x = change.x;
+            lastFacingDirection.y = change.y;
         }
         else
         {
