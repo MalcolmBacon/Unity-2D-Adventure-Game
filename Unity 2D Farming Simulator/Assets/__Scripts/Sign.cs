@@ -39,7 +39,7 @@ public class Sign : MonoBehaviour
     }
     private bool PlayerFacingSign()
     {
-        Vector3 lastFacingDirection = playerObject.gameObject.GetComponent<PlayerMovement>().lastFacingDirection;
+        Vector3 lastFacingDirection = playerObject.gameObject.GetComponent<Player>().lastFacingDirection;
         if (lastFacingDirection.y == -directionOfSign.y || lastFacingDirection.x == -directionOfSign.x)
         {
             return true;

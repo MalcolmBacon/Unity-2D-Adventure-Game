@@ -7,14 +7,14 @@ public enum PlayerState
     walk,
     attack
 }
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public PlayerState state;
     public float speed;
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 change;
-    public Vector3 lastFacingDirection;
+    public Vector2 lastFacingDirection;
     // Start is called before the first frame update
     void Start()
     {

@@ -43,6 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Environment
+    uniqueID: 982377497
+    locked: 0
   - name: Signs
     uniqueID: 1842548723
     locked: 0
