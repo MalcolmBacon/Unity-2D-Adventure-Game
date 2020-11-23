@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,13 @@ public class PickUpItem : MonoBehaviour
     private float timeToLeave = 10f;
     [SerializeField]
     private float collisionDistance = 0.1f;
-    private void Awake() {
+    public int count = 1;
+    private Item item;
+
+    private void Awake()
+    {
         player = GameManager.instance.player.transform;
+        item = gameObject.GetComponent<Item>();
     }
     private void Update()
     {
@@ -30,8 +36,17 @@ public class PickUpItem : MonoBehaviour
             player.position,
             speed * Time.deltaTime
         );
+
         if (distance < collisionDistance)
         {
+            if (GameManager.instance.playerInventory != null)
+            {
+                GameManager.instance.playerInventory.AddItem(item.item, 1);
+            }
+            else
+            {
+                Debug.LogWarning("No player inventory has been created yet");
+            }
             Destroy(gameObject);
         }
     }

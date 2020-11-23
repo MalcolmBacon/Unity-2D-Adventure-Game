@@ -25,7 +25,6 @@ public class PlayerInteractController : MonoBehaviour
         CheckHightlightable();
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Use tool");
             Interact();
         }
     }

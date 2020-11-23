@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5829907973847523626}
   - component: {fileID: 5829907973847523629}
   - component: {fileID: 5829907973847523627}
+  - component: {fileID: 3310951923650628937}
   m_Layer: 0
   m_Name: TreeLogPickup
   m_TagString: Untagged
@@ -99,3 +100,17 @@ MonoBehaviour:
   pickUpDistance: 1.5
   timeToLeave: 10
   collisionDistance: 0.1
+  count: 1
+--- !u!114 &3310951923650628937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829907973847523628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68604a41721dbc04a8f039274599606c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 0c6aec141d4b4534baa3788e716cbc1d, type: 2}
