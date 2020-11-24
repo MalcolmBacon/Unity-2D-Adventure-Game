@@ -13,6 +13,15 @@ public class DisplayInventory : MonoBehaviour
     public int ySpaceBetweenItems;
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            inventory.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+        }
+
         UpdateDisplay();
     }
     private void OnEnable()
