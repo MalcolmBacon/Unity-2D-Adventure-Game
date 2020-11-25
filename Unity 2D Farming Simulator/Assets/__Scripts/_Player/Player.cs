@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private Vector3 change;
     public Vector2 lastFacingDirection;
+    public FloatObject currentPlayerHealth;
+    public Observer playerHealthObserver;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +60,7 @@ public class Player : MonoBehaviour
         yield return null; // wait one frame 
         // don't automatically go back into attack animation
         animator.SetBool("attacking", false);
-        yield return new WaitForSeconds(.16f); 
+        yield return new WaitForSeconds(.16f);
         state = PlayerState.walk;
     }
 
@@ -85,9 +87,18 @@ public class Player : MonoBehaviour
         //Call player rigidbody and move where we are plus the change
         playerRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
     }
-    public void Knockback(float knockbackTime)
+    public void Knockback(float knockbackTime, float damage)
     {
-        StartCoroutine(KnockbackCoroutine(knockbackTime));
+        currentPlayerHealth.runTimeValue -= damage;
+        playerHealthObserver.Raise();
+        if (currentPlayerHealth.runTimeValue > 0)
+        {
+            StartCoroutine(KnockbackCoroutine(knockbackTime));
+        }
+        else 
+        {
+            this.gameObject.SetActive(false);
+        }
     }
     private IEnumerator KnockbackCoroutine(float knockbackTime)
     {

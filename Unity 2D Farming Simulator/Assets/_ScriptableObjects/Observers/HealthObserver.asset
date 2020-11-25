@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcfd9c6f92400e4b98a2996b89ab98b, type: 3}
-  m_Name: SkeletonDamageDealt
+  m_Script: {fileID: 11500000, guid: 374e04d6c8d5ef341a011c7fdadab506, type: 3}
+  m_Name: HealthObserver
   m_EditorClassIdentifier: 
-  forceOfKnockback: 8
-  knockbackTime: 0.1
-  damage: 1
+  listeners: []

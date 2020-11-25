@@ -19,7 +19,7 @@ public class Knockback : MonoBehaviour
             {
                 otherRigidbody2D = collision.GetComponentInParent<Rigidbody2D>();
             }
-            else 
+            else
             {
                 otherRigidbody2D = collision.GetComponent<Rigidbody2D>();
             }
@@ -32,13 +32,19 @@ public class Knockback : MonoBehaviour
 
                 if (otherRigidbody2D.gameObject.CompareTag("PlayerTag"))
                 {
-                    otherRigidbody2D.GetComponent<Player>().state = PlayerState.stagger;
-                    otherRigidbody2D.GetComponent<Player>().Knockback(damageDealtObject.knockbackTime);
+                    Player player = otherRigidbody2D.GetComponent<Player>();
+                    if (player.state != PlayerState.stagger)
+                    {
+                        player.state = PlayerState.stagger;
+                        player.Knockback(damageDealtObject.knockbackTime, damageDealtObject.damage);
+                    }
                 }
-                else
+                else //Enemy
                 {
-                    otherRigidbody2D.GetComponent<Enemy>().currentState = EnemyState.stagger;
-                    otherRigidbody2D.GetComponent<Enemy>().Knockback(otherRigidbody2D, damageDealtObject.knockbackTime, damageDealtObject.damage);
+                    Enemy enemy = otherRigidbody2D.GetComponent<Enemy>();
+
+                    enemy.currentState = EnemyState.stagger;
+                    enemy.Knockback(otherRigidbody2D, damageDealtObject.knockbackTime, damageDealtObject.damage);
                 }
             }
         }
