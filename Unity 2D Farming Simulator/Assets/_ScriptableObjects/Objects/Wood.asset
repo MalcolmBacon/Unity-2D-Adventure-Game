@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddad72e7812c604aa28b2b6a30f5b87, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5223894978395915546, guid: 204abd2aaa640bd4caff427cb1dddce8, type: 3}
+  Id: 0
+  ID: Wood
+  uiDisplay: {fileID: -7068374925241681724, guid: f4dffd2a2c25bf04eb8b36da21eb78f6, type: 3}
   type: 2
   description: This is a piece of wood

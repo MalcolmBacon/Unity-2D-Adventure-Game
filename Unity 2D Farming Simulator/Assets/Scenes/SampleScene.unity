@@ -4953,9 +4953,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1937603300}
-  - {fileID: 611226842}
-  - {fileID: 518467978}
   - {fileID: 822312393}
+  - {fileID: 518467978}
+  - {fileID: 611226842}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5099,7 +5099,6 @@ GameObject:
   - component: {fileID: 154768273}
   - component: {fileID: 154768275}
   - component: {fileID: 154768276}
-  - component: {fileID: 154768277}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5121,6 +5120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 144618477}
   playerInventory: {fileID: 11400000, guid: 450d5ac0f9120e74ebd736be7c4871ec, type: 2}
+  itemDatabase: {fileID: 11400000, guid: 2b6296e03584bc448a1b5666c2840379, type: 2}
   clearInventoryOnQuit: 1
 --- !u!4 &154768274
 Transform:
@@ -5208,18 +5208,6 @@ MonoBehaviour:
   globalLight: {fileID: 1176854011}
   text: {fileID: 1812553153}
   timeScale: 6000
---- !u!114 &154768277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154768272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3064116b7c7e843a8f150951870f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &518467977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,9 +5299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc78d7b7f6e634181c7423b9a067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfKnockback: 4
-  knockbackTime: 1
-  damage: 1
+  damageDealtObject: {fileID: 11400000, guid: 38112d13909f0b44a849c16e25e7794c, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,12 +5458,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611226841}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 144618480}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &611226843
 PolygonCollider2D:
@@ -5534,9 +5520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc78d7b7f6e634181c7423b9a067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfKnockback: 4
-  knockbackTime: 1
-  damage: 1
+  damageDealtObject: {fileID: 11400000, guid: 38112d13909f0b44a849c16e25e7794c, type: 2}
 --- !u!1 &810815589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5600,7 +5584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 144618480}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &822312394
 PolygonCollider2D:
@@ -5658,9 +5642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc78d7b7f6e634181c7423b9a067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfKnockback: 4
-  knockbackTime: 1
-  damage: 1
+  damageDealtObject: {fileID: 11400000, guid: 38112d13909f0b44a849c16e25e7794c, type: 2}
 --- !u!1 &834505673
 GameObject:
   m_ObjectHideFlags: 0
@@ -18549,7 +18531,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0008916855, y: -0.06928241}
+  m_Offset: {x: -0.012552738, y: -0.06121564}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18560,7 +18542,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0929585, y: 0.9242389}
+  m_Size: {x: 1.2274065, y: 0.81130266}
   m_EdgeRadius: 0
 --- !u!61 &1226632633
 BoxCollider2D:
@@ -18831,8 +18813,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -222, y: 185.50002}
-  m_SizeDelta: {x: -136.53479, y: -235.25998}
+  m_AnchoredPosition: {x: -110.52, y: 82.04}
+  m_SizeDelta: {x: 309.38672, y: 178.56879}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590504944
 MonoBehaviour:
@@ -18884,12 +18866,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6bd0edf2aa30348b1c9606f8a9a510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPrefab: {fileID: 5554871819367358508, guid: 7d614f4056df4f74f8b0cc3babb32ba6, type: 3}
   inventory: {fileID: 11400000, guid: 450d5ac0f9120e74ebd736be7c4871ec, type: 2}
-  xStart: -400
-  yStart: 180
-  xSpaceBetweenItems: 125
-  numberOfColumns: 6
-  ySpaceBetweenItems: 35
+  xStart: -450
+  yStart: 240
+  xSpaceBetweenItems: 230
+  numberOfColumns: 5
+  ySpaceBetweenItems: 250
 --- !u!1 &1708007742
 GameObject:
   m_ObjectHideFlags: 0
@@ -19593,9 +19576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc78d7b7f6e634181c7423b9a067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfKnockback: 4
-  knockbackTime: 0.3
-  damage: 0
+  damageDealtObject: {fileID: 11400000, guid: 816e2870f5276c94f9661130f981af61, type: 2}
 --- !u!1 &1937603299
 GameObject:
   m_ObjectHideFlags: 0
@@ -19687,9 +19668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc78d7b7f6e634181c7423b9a067b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceOfKnockback: 4
-  knockbackTime: 1
-  damage: 1
+  damageDealtObject: {fileID: 11400000, guid: 38112d13909f0b44a849c16e25e7794c, type: 2}
 --- !u!1 &2011777958
 GameObject:
   m_ObjectHideFlags: 0

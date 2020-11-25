@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c75314d63adf84c82d154a27295a21, type: 3}
-  m_Name: ItemContainer
+  m_Script: {fileID: 11500000, guid: ebcfd9c6f92400e4b98a2996b89ab98b, type: 3}
+  m_Name: SkeletonDamageDealt
   m_EditorClassIdentifier: 
-  playerInventoryList:
-  - item: {fileID: 11400000, guid: 184c7eb6828813b49b2fd51c638fc999, type: 2}
-    count: 5
-    panelIndex: 0
+  forceOfKnockback: 6
+  knockbackTime: 0.1
+  damage: 1

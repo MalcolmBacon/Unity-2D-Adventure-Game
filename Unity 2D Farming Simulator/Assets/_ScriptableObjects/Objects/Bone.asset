@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddad72e7812c604aa28b2b6a30f5b87, type: 3}
-  m_Name: StoneObject
+  m_Script: {fileID: 11500000, guid: de84e8059071d974fa0de8b6d48e743c, type: 3}
+  m_Name: Bone
   m_EditorClassIdentifier: 
-  prefab: {fileID: 752162503782427888, guid: e72b5a18fd76e5c4bacac11f5fddba07, type: 3}
-  type: 2
+  Id: 0
+  ID: Bone
+  uiDisplay: {fileID: 21300000, guid: 4d9b73315301af74f942a53741907f21, type: 3}
+  type: 0
   description: 
+  value: 2

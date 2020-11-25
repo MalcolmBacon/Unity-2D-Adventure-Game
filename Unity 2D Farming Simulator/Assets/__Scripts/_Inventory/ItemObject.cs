@@ -6,13 +6,29 @@ public enum ItemType
 {
     Food, 
     Equipment,
-    Default
+    Default,
+    Loot
 }
 
 public abstract class ItemObject : ScriptableObject
 {
-    public GameObject prefab;
+    public int Id;
+    public string ID;
+    public Sprite uiDisplay;
     public ItemType type;
     [TextArea(15, 20)]
     public string description;
+}
+[System.Serializable]
+public class Item
+{
+    public string Name;
+    //public int Id;
+    public string ID;
+    public Item(ItemObject item)
+    {
+        Name = item.name;
+        //Id = item.Id;
+        ID = item.ID;
+    }
 }

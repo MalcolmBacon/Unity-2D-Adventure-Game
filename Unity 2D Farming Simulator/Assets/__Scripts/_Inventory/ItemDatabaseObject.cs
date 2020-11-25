@@ -2,26 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName="New Item Database", menuName="Inventory System/Items/Database")]
-public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiver
+[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
+public class ItemDatabaseObject : ScriptableObject//, ISerializationCallbackReceiver
 {
     public ItemObject[] Items;
-    public Dictionary<ItemObject, int> GetId = new Dictionary<ItemObject, int>();
-    public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
+    //public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
+    public Dictionary<string, ItemObject> GetItem = new Dictionary<string, ItemObject>();
 
-    public void OnAfterDeserialize()
+    [ContextMenu("Update Database")]
+    public void UpdateDatabase()
     {
-        GetId = new Dictionary<ItemObject, int>();
-        GetItem = new Dictionary<int, ItemObject>();
-
+        GetItem = new Dictionary<string, ItemObject>();
         for (int i = 0; i < Items.Length; i++)
         {
-            GetId.Add(Items[i],i);
-            GetItem.Add(i, Items[i]);
+            GetItem.Add(Items[i].ID, Items[i]);
         }
     }
+    // public void OnAfterDeserialize()
+    // {
+    //     Debug.Log("In on after deserialize");
+    //     for (int i = 0; i < Items.Length; i++)
+    //     {
+    //         // Debug.Log(Items[i].ID);
+    //         // Debug.Log(Items[i].uiDisplay);
+    //         // Debug.Log(Items[i].type);
+    //         // Debug.Log(Items[i].description);
 
-    public void OnBeforeSerialize()
-    {
-    }
+    //         //Items[i].Id = i; //set item ids
+    //        // GetItem.Add(i, Items[i]);
+    //         GetItem.Add(Items[i].ID, Items[i]);
+    //     }
+    // }
+
+    // public void OnBeforeSerialize()
+    // {
+    //     //Clear items out before serializing 
+    //     //GetItem = new Dictionary<int, ItemObject>();
+    //     GetItem = new Dictionary<string, ItemObject>();
+
+    // }
 }

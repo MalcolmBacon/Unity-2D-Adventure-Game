@@ -8,15 +8,17 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        itemDatabase.UpdateDatabase();
     }
     public GameObject player;
     public InventoryObject playerInventory;
+    public ItemDatabaseObject itemDatabase;
     public bool clearInventoryOnQuit = false;
     private void OnApplicationQuit()
     {
         if (clearInventoryOnQuit)
         {
-            playerInventory.Container.Clear();
+            playerInventory.Container.Items.Clear();
         }
     }
 }

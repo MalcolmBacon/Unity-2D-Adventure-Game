@@ -43,12 +43,13 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 0b908ef6bd91c4d43a8d4e86f0871f42, type: 3}
-    totalSpriteSurfaceArea: 1052701
+    totalSpriteSurfaceArea: 1053857
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 4d9b73315301af74f942a53741907f21, type: 3}
   - {fileID: 6012159994550463145, guid: 012488b218fd2204b9903ae3350ecf39, type: 3}
   - {fileID: 4957839718695236884, guid: 012488b218fd2204b9903ae3350ecf39, type: 3}
   - {fileID: -5215935280211577917, guid: 012488b218fd2204b9903ae3350ecf39, type: 3}
@@ -1404,6 +1405,7 @@ SpriteAtlas:
   - {fileID: 147799070741053269, guid: a2c8445fffd7e7d40850806c12abd682, type: 3}
   - {fileID: 21300000, guid: 2d48047fd4cccc74eb7650b75b9d8f19, type: 3}
   m_PackedSpriteNamesToIndex:
+  - I_Bone
   - SkeletonFull_13
   - SkeletonFull_12
   - SkeletonFull_28
