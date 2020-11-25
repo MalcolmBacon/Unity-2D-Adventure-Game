@@ -6,8 +6,9 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public float smoothing;
-    public Vector2 maxPosition;
     public Vector2 minPosition;
+    public Vector2 maxPosition;
+
     private void Start() {
         ResetAtPlayerPosition();
     }

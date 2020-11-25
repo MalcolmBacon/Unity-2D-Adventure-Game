@@ -12,7 +12,7 @@ public class RoomMovement : MonoBehaviour
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("PlayerTag"))
+        if (other.CompareTag("PlayerTag") && !other.isTrigger) //player has two colliders, make sure only activating once
         {
             //Access camera and change what its offset is
             cameraMovement.minPosition += minCameraPositionChange;
