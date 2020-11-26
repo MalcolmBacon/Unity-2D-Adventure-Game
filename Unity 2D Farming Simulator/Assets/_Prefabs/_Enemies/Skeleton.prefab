@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 1711934286841919298}
   - component: {fileID: 1711934286841919299}
   - component: {fileID: 1711934286841919297}
+  - component: {fileID: 1709160055911158252}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -233,6 +234,7 @@ MonoBehaviour:
   moveSpeed: 2
   currentState: 0
   maxHealth: {fileID: 11400000, guid: da03c031ea770a14fbd1d5b183784239, type: 2}
+  deathEffect: {fileID: 2076001029323836115, guid: a1ee35d465fe6454b8e10b034703db96, type: 3}
   target: {fileID: 0}
   chaseRadius: 4
   attackRadius: 1
@@ -329,6 +331,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDealtObject: {fileID: 11400000, guid: 816e2870f5276c94f9661130f981af61, type: 2}
+--- !u!114 &1709160055911158252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711934286841919307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f42917a7ac4ae4095f06e9dc0c3874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpDrop: {fileID: 5829907973847523628, guid: 7324a7e9f5dd4bc4ebfed6990171a007, type: 3}
+  spread: 0.7
 --- !u!1 &1711934286882127366
 GameObject:
   m_ObjectHideFlags: 0

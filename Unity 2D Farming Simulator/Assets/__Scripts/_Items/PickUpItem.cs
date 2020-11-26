@@ -7,7 +7,7 @@ public class PickUpItem : MonoBehaviour
 {
     Transform player;
     [SerializeField]
-    private float speed = 5f;
+    private float speed = 8f;
     [SerializeField]
     private float pickUpDistance = 1.5f;
     [SerializeField]

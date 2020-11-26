@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeCuttable : ObjectDestroyed
+public class ObjectDestroyed : MonoBehaviour
 {
-    public override void SpawnPickupItems()
+    [SerializeField]
+    public GameObject pickUpDrop;
+
+    [SerializeField]
+    public float spread = 0.7f;
+    public virtual void SpawnPickupItems()
     {
-        float dropCount = Random.Range(3f, 8f);
+
+    }
+    public virtual void SpawnPickupItems(GameObject pickUpDrop, float spread)
+    {
+        float dropCount = Random.Range(1f, 8f);
         while (dropCount > 0)
         {
             dropCount--;
@@ -17,7 +26,5 @@ public class TreeCuttable : ObjectDestroyed
             GameObject branch = Instantiate(pickUpDrop);
             branch.transform.position = newPosition;
         }
-
-        Destroy(gameObject);
     }
 }

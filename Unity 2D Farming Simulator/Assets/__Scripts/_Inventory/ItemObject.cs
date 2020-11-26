@@ -23,12 +23,10 @@ public abstract class ItemObject : ScriptableObject
 public class Item
 {
     public string Name;
-    //public int Id;
     public string ID;
     public Item(ItemObject item)
     {
         Name = item.name;
-        //Id = item.Id;
         ID = item.ID;
     }
 }

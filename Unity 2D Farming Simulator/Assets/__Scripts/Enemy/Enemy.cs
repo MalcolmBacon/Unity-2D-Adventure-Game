@@ -18,8 +18,11 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     public EnemyState currentState;
     public HealthObject maxHealth;
+    public GameObject deathEffect;
+    private ObjectDestroyed objectDestroyedPickupItem;
     private void Awake() {
         health = maxHealth.maxHealth;
+        objectDestroyedPickupItem = GetComponent<ObjectDestroyed>();
     }
     public void Knockback(Rigidbody2D otherRigidbody2D, float knockbackTime, float damage)
     {
@@ -39,6 +42,23 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             this.gameObject.SetActive(false);
+            DeathEffect();
+            SpawnPickupItems();
+        }
+    }
+    private void DeathEffect()
+    {
+        if (deathEffect != null)
+        {
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
+    }
+    private void SpawnPickupItems()
+    {
+        if (objectDestroyedPickupItem != null)
+        {
+            objectDestroyedPickupItem.SpawnPickupItems(objectDestroyedPickupItem.pickUpDrop, objectDestroyedPickupItem.spread);
         }
     }
 }

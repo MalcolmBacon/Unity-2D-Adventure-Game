@@ -37,10 +37,10 @@ public class PlayerToolsController : MonoBehaviour
 
         foreach (Collider2D collider in collidersInArea)
         {
-            ToolHit hit = collider.GetComponent<ToolHit>();
+            ObjectDestroyed hit = collider.GetComponent<ObjectDestroyed>();
             if (hit != null)
             {
-                hit.Hit();
+                hit.SpawnPickupItems();
                 break;
             }
         }

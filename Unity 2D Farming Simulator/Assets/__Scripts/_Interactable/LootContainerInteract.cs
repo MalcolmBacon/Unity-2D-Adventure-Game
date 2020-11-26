@@ -12,7 +12,6 @@ public class LootContainerInteract : Interactable
     bool chestIsOpened;
     public override void Interact(Player character)
     {
-        Debug.Log("In interact");
         if (!chestIsOpened)
         {
             chestIsOpened = true;
