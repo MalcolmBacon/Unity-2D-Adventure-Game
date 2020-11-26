@@ -43,7 +43,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 0b908ef6bd91c4d43a8d4e86f0871f42, type: 3}
-    totalSpriteSurfaceArea: 970849
+    totalSpriteSurfaceArea: 980929
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -1729,8 +1729,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 5319e90cdef08eb4a90ed29d73271916, type: 3}
   - {fileID: 21300000, guid: 046f821c76a004e4c91b9f27ee906194, type: 3}
   - {fileID: 21300000, guid: a375292c2560c9248bb8e6ca6c5fbf2b, type: 3}
+  - {fileID: -6768044818946543642, guid: 3cc7d05c527152b4a9b7916a9a479c00, type: 3}
   - {fileID: -6905922259874023411, guid: 3cc7d05c527152b4a9b7916a9a479c00, type: 3}
+  - {fileID: 5647483563723225417, guid: 3cc7d05c527152b4a9b7916a9a479c00, type: 3}
   - {fileID: 1948117334319197221, guid: 3cc7d05c527152b4a9b7916a9a479c00, type: 3}
+  - {fileID: 6866464857702916786, guid: 3cc7d05c527152b4a9b7916a9a479c00, type: 3}
   - {fileID: 21300000, guid: 4b61215c56174cb489119b1357a5b77c, type: 3}
   - {fileID: 21300000, guid: b28311bcbf17b47458fddc96553ce9c8, type: 3}
   - {fileID: 21300000, guid: b57c3f1d614dc3743a0d4cdc1f8e38a0, type: 3}
@@ -3451,8 +3454,11 @@ SpriteAtlas:
   - Feather
   - Wool
   - I_C_Fish
+  - _Checkmark_grey
   - InventoryItem
+  - _Checkmark_white
   - InventoryWindow
+  - _PopupWindow
   - Scroll
   - Wizard Hat
   - font

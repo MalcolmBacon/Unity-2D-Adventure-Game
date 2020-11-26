@@ -38,7 +38,7 @@ public class PlayerInteractController : MonoBehaviour
         foreach (Collider2D collider in collidersInArea)
         {
             Interactable interactable = collider.GetComponent<Interactable>();
-            if (interactable != null)
+            if (interactable != null && interactable.canInteractWith)
             {
                 highlightController.Highlight(interactable.gameObject);
                 return;

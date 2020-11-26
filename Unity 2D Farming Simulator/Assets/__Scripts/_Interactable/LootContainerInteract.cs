@@ -14,6 +14,7 @@ public class LootContainerInteract : Interactable
     {
         if (!chestIsOpened)
         {
+            canInteractWith = false;
             chestIsOpened = true;
             closedChest.SetActive(false);
             openChest.SetActive(true);
