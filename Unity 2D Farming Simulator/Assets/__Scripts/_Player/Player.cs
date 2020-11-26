@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Vector2 lastFacingDirection;
     public FloatObject currentPlayerHealth;
     public Observer playerHealthObserver;
+    public Vector2Object startingPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,11 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         SetInitialAnimationStates();
+        LoadPlayerPosition();
+    }
+    void LoadPlayerPosition()
+    {
+        transform.position = startingPosition.initialValue;
     }
     void SetInitialAnimationStates()
     {
