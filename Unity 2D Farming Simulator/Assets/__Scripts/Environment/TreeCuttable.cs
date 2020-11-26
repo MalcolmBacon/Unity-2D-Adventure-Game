@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TreeCuttable : ObjectDestroyed
 {
+    public void CutDownTree()
+    {
+        SpawnPickupItems();
+    }
     public override void SpawnPickupItems()
     {
         float dropCount = Random.Range(3f, 8f);
@@ -17,7 +21,7 @@ public class TreeCuttable : ObjectDestroyed
             GameObject branch = Instantiate(pickUpDrop);
             branch.transform.position = newPosition;
         }
-
-        Destroy(gameObject);
+        
+        gameObject.SetActive(false);
     }
 }

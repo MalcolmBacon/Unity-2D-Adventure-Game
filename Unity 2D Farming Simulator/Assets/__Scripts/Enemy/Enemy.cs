@@ -12,17 +12,21 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
+    public Vector2 startingPosition;
     private float health;
-    public string enemyName;
-    public int baseAttack;
     public float moveSpeed;
     public EnemyState currentState;
     public HealthObject maxHealth;
     public GameObject deathEffect;
     private ObjectDestroyed objectDestroyedPickupItem;
-    private void Awake() {
+    private void Awake()
+    {
         health = maxHealth.maxHealth;
         objectDestroyedPickupItem = GetComponent<ObjectDestroyed>();
+    }
+    private void OnEnable()
+    {
+        transform.position = startingPosition;
     }
     public void Knockback(Rigidbody2D otherRigidbody2D, float knockbackTime, float damage)
     {
@@ -44,7 +48,13 @@ public class Enemy : MonoBehaviour
             this.gameObject.SetActive(false);
             DeathEffect();
             SpawnPickupItems();
+            ResetEnemyState();
         }
+    }
+    private void ResetEnemyState()
+    {
+        health = maxHealth.maxHealth;
+        currentState = EnemyState.idle;
     }
     private void DeathEffect()
     {

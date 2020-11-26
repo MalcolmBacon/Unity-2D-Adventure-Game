@@ -35,8 +35,6 @@ public class PlayerInteractController : MonoBehaviour
 
         Collider2D[] collidersInArea = Physics2D.OverlapCircleAll(position, sizeOfInteractableArea);
 
-        
-
         foreach (Collider2D collider in collidersInArea)
         {
             Interactable interactable = collider.GetComponent<Interactable>();

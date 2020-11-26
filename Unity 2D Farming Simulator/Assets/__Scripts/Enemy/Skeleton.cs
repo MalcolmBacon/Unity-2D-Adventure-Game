@@ -8,13 +8,11 @@ public class Skeleton : Enemy
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    public Vector2 startingPosition;
     public float maxDistanceFromStartingPosition;
     private Animator animator;
     float distanceToTarget;
     private void Start()
     {
-        startingPosition = transform.position;
         currentState = EnemyState.idle;
         skeletonRigidbody2D = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("PlayerTag").transform;
@@ -35,7 +33,8 @@ public class Skeleton : Enemy
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius
         && Vector3.Distance(target.position, transform.position) > attackRadius
-         && currentState != EnemyState.stagger && currentState != EnemyState.attack)        {
+         && currentState != EnemyState.stagger && currentState != EnemyState.attack) //Move towards player
+        {
             Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             ChangeAnimation(temp - transform.position);
             skeletonRigidbody2D.MovePosition(temp);
@@ -43,7 +42,7 @@ public class Skeleton : Enemy
             animator.SetBool("moving", true);
         }
         else if (currentState != EnemyState.stagger && currentState != EnemyState.attack
-        && transform.position.x != startingPosition.x && transform.position.y != startingPosition.y)
+        && transform.position.x != startingPosition.x && transform.position.y != startingPosition.y) //Move towards starting position
         {
             Vector3 temp = Vector3.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
             ChangeAnimation(temp - transform.position);
@@ -51,7 +50,7 @@ public class Skeleton : Enemy
             ChangeState(EnemyState.walk);
             animator.SetBool("moving", true);
         }
-        else if (currentState != EnemyState.stagger && currentState != EnemyState.attack)
+        else if (currentState != EnemyState.stagger && currentState != EnemyState.attack) //Idle
         {
             ChangeState(EnemyState.idle);
             animator.SetFloat("moveX", 0);

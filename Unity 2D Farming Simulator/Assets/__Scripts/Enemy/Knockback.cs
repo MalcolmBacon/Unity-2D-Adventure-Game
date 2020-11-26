@@ -9,7 +9,16 @@ public class Knockback : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Breakable") && this.gameObject.CompareTag("PlayerTag"))
         {
-            collision.gameObject.GetComponent<Pot>().SmashPot();
+            Pot pot = collision.gameObject.GetComponent<Pot>();
+            TreeCuttable tree = collision.gameObject.GetComponent<TreeCuttable>();
+            if (pot != null)
+            {
+                pot.SmashPot();
+            }
+            else if (tree != null)
+            {
+                tree.CutDownTree();
+            }
         }
         if (collision.gameObject.CompareTag("Enemy") && collision.isTrigger || collision.gameObject.CompareTag("PlayerTag"))
         {
