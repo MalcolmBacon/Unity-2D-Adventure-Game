@@ -24,6 +24,17 @@ public class Interactable : IInteractable
             openChest.SetActive(true);
         }
     }
+    public void Interact(GameObject panel)
+    {
+        if (panel.activeInHierarchy)
+        {
+            panel.SetActive(false);
+        }
+        else
+        {
+            panel.SetActive(true);
+        }
+    }
 
     public void Interact(string dialogue)
     {

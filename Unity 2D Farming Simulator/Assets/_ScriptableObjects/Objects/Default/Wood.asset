@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Wood
   uiDisplay: {fileID: -7068374925241681724, guid: f4dffd2a2c25bf04eb8b36da21eb78f6, type: 3}
-  type: 2
+  type: 0
   description: This is a piece of wood
+  value: 1

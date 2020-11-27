@@ -49,6 +49,12 @@ public class PlayerInteractController : MonoBehaviour
                 highlightController.Highlight(signInteractable.gameObject);
                 return;
             }
+            ShopInteractable shopInteractable = collider.GetComponent<ShopInteractable>();
+            if (shopInteractable != null && shopInteractable.interactable.canInteractWith)
+            {
+                highlightController.Highlight(shopInteractable.gameObject);
+                return;
+            }
         }
         highlightController.Hide();
     }
@@ -71,6 +77,12 @@ public class PlayerInteractController : MonoBehaviour
             if (signInteractable != null)
             {
                 signInteractable.Interact();
+                break;
+            }
+            ShopInteractable shopInteractable = collider.GetComponent<ShopInteractable>();
+            if (shopInteractable != null)
+            {
+                shopInteractable.Interact();
                 break;
             }
         }

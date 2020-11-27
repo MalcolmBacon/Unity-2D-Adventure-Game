@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: Stone
   uiDisplay: {fileID: 21300000, guid: c6b259f70299d97429cfeee5646d6651, type: 3}
-  type: 2
+  type: 0
   description: 
+  value: 1
