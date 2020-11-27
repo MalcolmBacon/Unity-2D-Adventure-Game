@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5829907973847523627}
   - component: {fileID: 3310951923650628937}
   m_Layer: 0
-  m_Name: TreeLogPickup
+  m_Name: GoldCoinPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 982377497
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3085000837880981780, guid: b90a9d88ac0f82744841deda5ff9a589, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 394899dbf2938874ca7d1025f7598406, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cf16d71d4368045817ff20f8c65a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   pickUpDistance: 1.5
   timeToLeave: 10
   collisionDistance: 0.1
@@ -113,4 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68604a41721dbc04a8f039274599606c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 0c6aec141d4b4534baa3788e716cbc1d, type: 2}
+  item: {fileID: 11400000, guid: d470d38dee644b24fa7b4ee74f5978c5, type: 2}

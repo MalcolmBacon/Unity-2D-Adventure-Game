@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectDestroyed : MonoBehaviour
+public class PickupItemSpawn : MonoBehaviour
 {
     [SerializeField]
     public GameObject pickUpDrop;
 
     [SerializeField]
     public float spread = 0.7f;
+    [SerializeField]
+    public float minDropNumber = 1;
+    [SerializeField]
+    public float maxDropNumber = 5;
     public virtual void SpawnPickupItems()
     {
-
-    }
-    public virtual void SpawnPickupItems(GameObject pickUpDrop, float spread)
-    {
-        float dropCount = Random.Range(1f, 8f);
+        float dropCount = Random.Range(minDropNumber, maxDropNumber);
         while (dropCount > 0)
         {
             dropCount--;

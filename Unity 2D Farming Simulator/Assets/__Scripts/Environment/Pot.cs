@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pot : Breakable
+public class Pot : MonoBehaviour
 {
     private Animator animator;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Pot : Breakable
 
     IEnumerator BreakCoroutine()
     {
-        yield return new WaitForSeconds(0.26f);
+        yield return new WaitForSeconds(0.24f);
         this.gameObject.SetActive(false);
     }
 }

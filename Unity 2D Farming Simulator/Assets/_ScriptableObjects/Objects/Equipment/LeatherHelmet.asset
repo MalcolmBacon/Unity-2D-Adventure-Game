@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bddad72e7812c604aa28b2b6a30f5b87, type: 3}
-  m_Name: Wood
+  m_Script: {fileID: 11500000, guid: e31766bff6315a542b1e703afd6e1603, type: 3}
+  m_Name: LeatherHelmet
   m_EditorClassIdentifier: 
-  Id: 0
-  ID: Wood
-  uiDisplay: {fileID: -7068374925241681724, guid: f4dffd2a2c25bf04eb8b36da21eb78f6, type: 3}
-  type: 2
-  description: This is a piece of wood
+  ID: LeatherHelmet
+  uiDisplay: {fileID: 21300000, guid: 5ff9b869a12e70b4db7a137f84ed920b, type: 3}
+  type: 1
+  description: 
+  atkBonus: 0
+  defenceBonus: 1

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootContainerInteract : Interactable
+public class LootContainerInteract : PickupItemSpawn
 {
     [SerializeField]
     GameObject closedChest;
@@ -10,14 +10,13 @@ public class LootContainerInteract : Interactable
     GameObject openChest;
     [SerializeField]
     bool chestIsOpened;
-    public override void Interact(Player character)
+    public Interactable interactable = new Interactable();
+    public void Interact()
     {
-        if (!chestIsOpened)
+        interactable.Interact(ref chestIsOpened, closedChest, openChest);
+        if (chestIsOpened)
         {
-            canInteractWith = false;
-            chestIsOpened = true;
-            closedChest.SetActive(false);
-            openChest.SetActive(true);
+            base.SpawnPickupItems();
         }
     }
 

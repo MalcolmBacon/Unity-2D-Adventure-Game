@@ -4,15 +4,14 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Food, 
-    Equipment,
     Default,
+    Equipment,
+    Food, 
     Loot
 }
 
 public abstract class ItemObject : ScriptableObject
 {
-    public int Id;
     public string ID;
     public Sprite uiDisplay;
     public ItemType type;

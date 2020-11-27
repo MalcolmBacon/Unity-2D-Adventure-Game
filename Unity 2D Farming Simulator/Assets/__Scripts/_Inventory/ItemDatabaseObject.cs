@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items/Database")]
+[CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Database")]
 public class ItemDatabaseObject : ScriptableObject//, ISerializationCallbackReceiver
 {
     public ItemObject[] Items;
-    //public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
     public Dictionary<string, ItemObject> GetItem = new Dictionary<string, ItemObject>();
 
     [ContextMenu("Update Database")]

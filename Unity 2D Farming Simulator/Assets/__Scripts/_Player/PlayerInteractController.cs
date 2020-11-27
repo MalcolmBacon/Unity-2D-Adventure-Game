@@ -37,10 +37,16 @@ public class PlayerInteractController : MonoBehaviour
 
         foreach (Collider2D collider in collidersInArea)
         {
-            Interactable interactable = collider.GetComponent<Interactable>();
-            if (interactable != null && interactable.canInteractWith)
+            LootContainerInteract lootContainerInteractable = collider.GetComponent<LootContainerInteract>();
+            if (lootContainerInteractable != null && lootContainerInteractable.interactable.canInteractWith)
             {
-                highlightController.Highlight(interactable.gameObject);
+                highlightController.Highlight(lootContainerInteractable.gameObject);
+                return;
+            }
+            SignInteractable signInteractable = collider.GetComponent<SignInteractable>();
+            if (signInteractable != null && signInteractable.interactable.canInteractWith)
+            {
+                highlightController.Highlight(signInteractable.gameObject);
                 return;
             }
         }
@@ -55,10 +61,16 @@ public class PlayerInteractController : MonoBehaviour
 
         foreach (Collider2D collider in collidersInArea)
         {
-            Interactable interactable = collider.GetComponent<Interactable>();
-            if (interactable != null)
+            LootContainerInteract lootContainerInteractable = collider.GetComponent<LootContainerInteract>();
+            if (lootContainerInteractable != null)
             {
-                interactable.Interact(player);
+                lootContainerInteractable.Interact();
+                break;
+            }
+            SignInteractable signInteractable = collider.GetComponent<SignInteractable>();
+            if (signInteractable != null)
+            {
+                signInteractable.Interact();
                 break;
             }
         }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TalkInteract : Interactable
 {
-    public override void Interact(Player character)
+    Interactable interactable = new Interactable();
+    public void Interact()
     {
-        Debug.Log("Dialogue");
+        interactable.Interact("Dialogue");
     }
 }
