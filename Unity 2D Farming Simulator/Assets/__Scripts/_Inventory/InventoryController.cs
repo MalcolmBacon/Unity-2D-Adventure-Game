@@ -10,7 +10,7 @@ public class InventoryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (panel.activeInHierarchy)
             {

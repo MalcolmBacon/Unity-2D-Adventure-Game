@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 1075195862994361481}
   - component: {fileID: 1075195862994361495}
   - component: {fileID: 1075195862994361492}
-  - component: {fileID: 1075195862994361490}
   - component: {fileID: 1075195862994361493}
   - component: {fileID: 1075195862994361480}
   - component: {fileID: 1075195862994361491}
@@ -295,20 +294,7 @@ MonoBehaviour:
   lastFacingDirection: {x: 0, y: 0}
   currentPlayerHealth: {fileID: 11400000, guid: 97d57050e9f32f0429ae9ca8bed86342, type: 2}
   playerHealthObserver: {fileID: 11400000, guid: 792da0397eca3604082d9372d681bc70, type: 2}
---- !u!114 &1075195862994361490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075195862994361483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae0668d0324b45a47adf5672d4ce5e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetDistance: 1
-  sizeOfInteractableArea: 1.2
+  startingPosition: {fileID: 0}
 --- !u!95 &1075195862994361493
 Animator:
   serializedVersion: 3

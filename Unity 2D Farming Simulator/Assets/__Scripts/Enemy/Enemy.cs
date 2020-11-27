@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     }
     private void TakeDamage(float damage)
     {
-        health -= (damage / 2);
+        health -= damage; // / 2);
         if (health <= 0)
         {
             this.gameObject.SetActive(false);
