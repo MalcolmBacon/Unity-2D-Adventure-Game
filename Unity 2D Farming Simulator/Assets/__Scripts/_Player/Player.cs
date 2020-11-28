@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     public FloatObject currentPlayerHealth;
     public Observer playerHealthObserver;
     public Vector2Object startingPosition;
+    public BoolObject gameHasStarted;
+    public TextObject dialog;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,8 @@ public class Player : MonoBehaviour
 
         SetInitialAnimationStates();
         LoadPlayerPosition();
-    }
+    }    
+
     void LoadPlayerPosition()
     {
         transform.position = startingPosition.initialValue;
@@ -96,6 +100,7 @@ public class Player : MonoBehaviour
     public void Knockback(float knockbackTime, float damage)
     {
         currentPlayerHealth.runTimeValue -= damage;
+        Debug.Log("Current health: " + currentPlayerHealth.runTimeValue);
         playerHealthObserver.Raise();
         if (currentPlayerHealth.runTimeValue > 0)
         {

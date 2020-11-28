@@ -10,7 +10,7 @@ public class PickupItem : MonoBehaviour
     [SerializeField]
     public float spread = 0.7f;
     [SerializeField]
-    public float minDropNumber = 1;
+    public float minDropNumber = 2;
     [SerializeField]
     public float maxDropNumber = 5;
     public virtual void SpawnPickupItems()

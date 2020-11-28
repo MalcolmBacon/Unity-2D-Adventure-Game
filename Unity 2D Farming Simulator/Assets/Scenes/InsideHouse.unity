@@ -2370,6 +2370,14 @@ PrefabInstance:
       propertyPath: startingPosition
       value: 
       objectReference: {fileID: 11400000, guid: 430aedc405e037f44a19c637e75ddaac, type: 2}
+    - target: {fileID: 1075195862994361492, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
+      propertyPath: gameHasStarted
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ef7c8a5567ab0a4ca36336c951ca51d, type: 2}
+    - target: {fileID: 1075195862994361492, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
+      propertyPath: dialog
+      value: 
+      objectReference: {fileID: 11400000, guid: f2a01ce0e5f648f49ac7ac75c5118f56, type: 2}
     - target: {fileID: 1075195862994361494, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -3842,6 +3850,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7696614362123143230, guid: 585cd5249867316468752fe595e994d4, type: 3}
   m_PrefabInstance: {fileID: 1125278091}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1166199947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7623235168576573056, guid: ee59c3959bcc3a04ba4a87e1e62445a0, type: 3}
+  m_PrefabInstance: {fileID: 724124733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1166199949 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7623235168576573060, guid: ee59c3959bcc3a04ba4a87e1e62445a0, type: 3}
+  m_PrefabInstance: {fileID: 724124733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1221485787
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,6 +4047,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1584161557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1075195862994361483, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
+  m_PrefabInstance: {fileID: 362171406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1584161566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584161557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9256dd1b324bf44a9d5db829c1c457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpBox: {fileID: 1166199947}
+  animator: {fileID: 1166199949}
 --- !u!1 &1689833452
 GameObject:
   m_ObjectHideFlags: 0

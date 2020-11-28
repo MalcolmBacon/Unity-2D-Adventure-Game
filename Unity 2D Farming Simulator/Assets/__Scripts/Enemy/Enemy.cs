@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     {
         health = maxHealth.maxHealth;
         objectDestroyedPickupItem = GetComponent<PickupItem>();
+        transform.position = startingPosition;
     }
     private void OnEnable()
     {
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
     }
     private void TakeDamage(float damage)
     {
+        Debug.Log("In take damage");
         health -= damage; // / 2);
         if (health <= 0)
         {
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour
     }
     private void SpawnPickupItems()
     {
+        Debug.Log("In spawn pickup items");
         if (objectDestroyedPickupItem != null)
         {
             objectDestroyedPickupItem.SpawnPickupItems();

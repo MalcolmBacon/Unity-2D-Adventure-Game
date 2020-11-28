@@ -8,12 +8,13 @@ public class Room : MonoBehaviour
     public Pot[] pots;
     public TreeCuttable[] trees;
     public virtual void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("PlayerTag") && !other.isTrigger)
+        if (other.CompareTag("PlayerInteractable") && other.isTrigger)
         {
             bool activation = true;
             //When entering a room, set all game objects in that room to active
             for (int i = 0; i < enemies.Length; i++)
             {
+                Debug.Log("in enemie change activation");
                 ChangeActivation(enemies[i], activation);
             }
             for (int i = 0; i < pots.Length; i++)
@@ -27,7 +28,7 @@ public class Room : MonoBehaviour
         }
     }
     public virtual void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag("PlayerTag") && !other.isTrigger)
+        if (other.CompareTag("PlayerInteractable") && other.isTrigger)
         {
             bool activation = false;
             //When you are leaving a room, set all game objects in that room to inactive

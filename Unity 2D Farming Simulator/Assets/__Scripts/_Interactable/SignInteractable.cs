@@ -6,12 +6,11 @@ using TMPro;
 
 public class SignInteractable : _Interactable
 {
-    public string dialog;
+    public TextObject dialog;
     private PopupSystem pop;
     private void Start()
     {
         pop = GetComponent<PopupSystem>();
-
     }
     private void Update()
     {
@@ -20,7 +19,7 @@ public class SignInteractable : _Interactable
             base.Highlight(this.gameObject);
             if (Input.GetMouseButtonDown(1))
             {
-                base.Interact(pop, dialog);
+                base.Interact(pop, dialog.text);
             }
         }
     }

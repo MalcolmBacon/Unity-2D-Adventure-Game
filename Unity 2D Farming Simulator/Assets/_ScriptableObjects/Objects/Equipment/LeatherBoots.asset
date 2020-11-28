@@ -17,5 +17,6 @@ MonoBehaviour:
   type: 1
   description: 
   value: 1
+  stackable: 0
   atkBonus: 0
   defenceBonus: 1

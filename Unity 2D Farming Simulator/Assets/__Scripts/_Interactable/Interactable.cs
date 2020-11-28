@@ -56,7 +56,9 @@ public class _Interactable : MonoBehaviour
     }
     public virtual void Interact(FloatObject currentPlayerHealth, Observer playerHealthObserver)
     {
+        Debug.Log("Current run time value before: " + currentPlayerHealth.runTimeValue);
         currentPlayerHealth.runTimeValue = currentPlayerHealth.maxRunTimeValue;
+        Debug.Log("Current run time value after resting: " + currentPlayerHealth.runTimeValue);
         playerHealthObserver.Raise();
     }
     public virtual void Interact(GameObject closedChest, GameObject openChest)
