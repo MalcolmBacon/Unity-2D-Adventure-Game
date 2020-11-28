@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor;
@@ -12,18 +13,58 @@ public class InventoryObject : ScriptableObject
     private string savePath = "/inventory.Save";
     public ItemDatabaseObject database;
     public Inventory Container;
-    public void AddItem(Item item, int amount)
+    public void AddItem(ItemObject itemObject, int amount)
     {
         for (int i = 0; i < Container.Items.Count; i++)
         {
-            if (Container.Items[i].item.ID == item.ID)
+            if (Container.Items[i].item.ID == itemObject.ID)
             {
                 Container.Items[i].AddAmount(amount);
                 return;
             }
         }
-        Container.Items.Add(new InventorySlot(item.ID, item, amount));
+        Container.Items.Add(new InventorySlot(itemObject.ID, new Item(itemObject), amount));
     }
+    public void SellItem(ItemObject itemForSale, string currencyID)
+    {
+        for (int i = 0; i < Container.Items.Count; i++)
+        {
+            if (Container.Items[i].item.ID == itemForSale.ID)
+            {
+                if (Container.Items[i].DecrementAmount())
+                {
+                    AddItem(database.GetItem[currencyID], itemForSale.value);
+                    return;
+                }
+            }
+        }
+    }
+    public bool BuyItem(ItemObject itemToBuy, string currencyID)
+    {
+        //Eventually need to switch stackable logic to AddItem() function and change ID logic
+        if (!itemToBuy.stackable)
+        {
+            if (Container.Items.Any(x => x.ID == itemToBuy.ID))
+            {
+                return false;
+            }
+        }
+
+        for (int i = 0; i < Container.Items.Count; i++)
+        {
+            if (Container.Items[i].item.ID == currencyID) //Get gold in inventory
+            {
+                InventorySlot coins = Container.Items[i];
+                if (coins.DecreaseAmount(itemToBuy.value)) //Buy item if have enough
+                {
+                    AddItem(itemToBuy, 1);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     [ContextMenu("Save")]
     public void Save()
@@ -75,7 +116,7 @@ public class InventoryObject : ScriptableObject
     public void Clear()
     {
         Container = new Inventory();
-    }    
+    }
 }
 [System.Serializable]
 public class Inventory
@@ -98,5 +139,23 @@ public class InventorySlot
     public void AddAmount(int value)
     {
         amount += value;
+    }
+    public bool DecrementAmount()
+    {
+        if (amount > 0)
+        {
+            amount--;
+            return true;
+        }
+        return false;
+    }
+    public bool DecreaseAmount(int value)
+    {
+        if (amount >= value)
+        {
+            amount -= value;
+            return true;
+        }
+        return false;
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupItemSpawn : MonoBehaviour
+public class PickupItem : MonoBehaviour
 {
     [SerializeField]
     public GameObject pickUpDrop;

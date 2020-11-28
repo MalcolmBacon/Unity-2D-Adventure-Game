@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkInteract : _Interactable
+public class BedInteractable : _Interactable
 {
+    public FloatObject currentPlayerHealth;
+    public Observer playerHealthObserver;
     private void Update()
     {
         if (playerInRange)
         {
             base.Highlight(this.gameObject);
+            // base.CheckHighlightable(this.gameObject);
             if (Input.GetMouseButtonDown(1))
             {
-                base.Interact("dialogue");
+                base.Interact(currentPlayerHealth, playerHealthObserver);
             }
         }
     }

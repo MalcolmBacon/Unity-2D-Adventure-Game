@@ -18,11 +18,11 @@ public class Enemy : MonoBehaviour
     public EnemyState currentState;
     public HealthObject maxHealth;
     public GameObject deathEffect;
-    private PickupItemSpawn objectDestroyedPickupItem;
+    private PickupItem objectDestroyedPickupItem;
     private void Awake()
     {
         health = maxHealth.maxHealth;
-        objectDestroyedPickupItem = GetComponent<PickupItemSpawn>();
+        objectDestroyedPickupItem = GetComponent<PickupItem>();
     }
     private void OnEnable()
     {

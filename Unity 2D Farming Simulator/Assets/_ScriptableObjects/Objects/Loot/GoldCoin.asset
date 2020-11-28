@@ -17,3 +17,4 @@ MonoBehaviour:
   type: 0
   description: 
   value: 1
+  stackable: 1

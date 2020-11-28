@@ -16,5 +16,7 @@ MonoBehaviour:
   uiDisplay: {fileID: 0}
   type: 1
   description: 
+  value: 0
+  stackable: 0
   atkBonus: 10
   defenceBonus: 0

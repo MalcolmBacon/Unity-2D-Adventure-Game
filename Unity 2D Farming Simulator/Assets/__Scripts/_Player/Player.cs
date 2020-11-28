@@ -12,7 +12,7 @@ public enum PlayerState
 public class Player : MonoBehaviour
 {
     public PlayerState state;
-    public float speed;
+    public FloatObject speed;
     private Rigidbody2D playerRigidbody;
     private Animator animator;
     private Vector3 change;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
     {
         change.Normalize();
         //Call player rigidbody and move where we are plus the change
-        playerRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        playerRigidbody.MovePosition(transform.position + change * speed.initialValue * Time.deltaTime);
     }
     public void Knockback(float knockbackTime, float damage)
     {

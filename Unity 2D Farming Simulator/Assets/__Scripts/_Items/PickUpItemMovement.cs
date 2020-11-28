@@ -15,12 +15,12 @@ public class PickUpItemMovement : MonoBehaviour
     [SerializeField]
     private float collisionDistance = 0.1f;
     public int count = 1;
-    private GroundItem item;
+    private GroundItem groundItem;
 
     private void Awake()
     {
         player = GameManager.instance.player.transform;
-        item = gameObject.GetComponent<GroundItem>();
+        groundItem = gameObject.GetComponent<GroundItem>();
     }
     private void Update()
     {
@@ -41,7 +41,7 @@ public class PickUpItemMovement : MonoBehaviour
         {
             if (GameManager.instance.playerInventory != null)
             {
-                GameManager.instance.playerInventory.AddItem(new Item(item.item), 1);
+                GameManager.instance.playerInventory.AddItem(groundItem.item, 1);
             }
             else
             {

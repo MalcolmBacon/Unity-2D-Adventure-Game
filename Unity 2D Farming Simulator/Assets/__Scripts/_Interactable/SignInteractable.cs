@@ -4,17 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SignInteractable : MonoBehaviour
+public class SignInteractable : _Interactable
 {
     public string dialog;
     private PopupSystem pop;
-    public Interactable interactable = new Interactable();
-
-    public bool canInteractWith { get; set; }
-
-    public void Interact()
+    private void Start()
     {
         pop = GetComponent<PopupSystem>();
-        interactable.Interact(pop, dialog);
+
+    }
+    private void Update()
+    {
+        if (playerInRange)
+        {
+            base.Highlight(this.gameObject);
+            if (Input.GetMouseButtonDown(1))
+            {
+                base.Interact(pop, dialog);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerInteractable") && other.isTrigger)
+        {
+            playerInRange = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerInteractable") && other.isTrigger)
+        {
+            playerInRange = false;
+            base.Hide();
+        }
     }
 }

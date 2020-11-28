@@ -2,13 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopInteractable : MonoBehaviour
+public class ShopInteractable : _Interactable
 {
     [SerializeField]
     GameObject panel;
-    public Interactable interactable = new Interactable();
-    public void Interact()
+    private void Update()
     {
-        interactable.Interact(panel);
+        if (playerInRange)
+        {
+            base.Highlight(this.gameObject);
+            if (playerInRange && Input.GetMouseButtonDown(1))
+            {
+                base.Interact(panel);
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerInteractable") && other.isTrigger)
+        {
+            playerInRange = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PlayerInteractable") && other.isTrigger)
+        {
+            playerInRange = false;
+            base.Hide();
+        }
     }
 }

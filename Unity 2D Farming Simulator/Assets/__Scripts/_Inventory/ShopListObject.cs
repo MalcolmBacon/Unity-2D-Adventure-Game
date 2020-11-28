@@ -6,5 +6,5 @@ using UnityEngine;
 public class ShopListObject : ScriptableObject
 {
     public ItemObject[] ItemsForSale;
-    public ItemObject[] ItemsToBuy;
+    public EquipmentObject[] ItemsToBuy;
 }

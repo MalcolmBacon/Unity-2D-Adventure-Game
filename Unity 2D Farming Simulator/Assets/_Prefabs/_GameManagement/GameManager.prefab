@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 474901784910904439}
   - component: {fileID: 474901784910904436}
-  - component: {fileID: 474901784910904438}
   - component: {fileID: 474901784910904433}
   m_Layer: 0
   m_Name: GameManager
@@ -49,19 +48,6 @@ MonoBehaviour:
   playerInventory: {fileID: 11400000, guid: 450d5ac0f9120e74ebd736be7c4871ec, type: 2}
   itemDatabase: {fileID: 11400000, guid: 2b6296e03584bc448a1b5666c2840379, type: 2}
   clearInventoryOnQuit: 1
---- !u!114 &474901784910904438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474901784910904437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc98cb0320cfb84fab934e25a871bee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlighter: {fileID: 0}
 --- !u!114 &474901784910904433
 MonoBehaviour:
   m_ObjectHideFlags: 0

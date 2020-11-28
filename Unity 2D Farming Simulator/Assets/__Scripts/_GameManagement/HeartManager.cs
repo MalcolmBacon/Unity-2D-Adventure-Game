@@ -40,23 +40,26 @@ public class HeartManager : MonoBehaviour
     public void UpdateHearts()
     {
         float tempHealth = playerCurrentHealth.runTimeValue / 2; // for partial hearts
-        for (int i = 0; i < playerCurrentHealth.initialValue / 2; i++)
+        for (int i = 0; i < playerCurrentHealth.runTimeValue / 2; i++)
         {
             if (i >= 3) //Armour hearts
             {
                 if (i <= tempHealth - 1)
                 {
                     //Full heart
+                    hearts[i].gameObject.SetActive(true);
                     hearts[i].sprite = armourFullHeart;
                 }
                 else if (i >= tempHealth)
                 {
                     //Empty heart
+                    hearts[i].gameObject.SetActive(true);
                     hearts[i].sprite = armourEmptyHeart;
                 }
                 else
                 {
                     //Half heart
+                    hearts[i].gameObject.SetActive(true);
                     hearts[i].sprite = armourHalfHeart;
                 }
             }

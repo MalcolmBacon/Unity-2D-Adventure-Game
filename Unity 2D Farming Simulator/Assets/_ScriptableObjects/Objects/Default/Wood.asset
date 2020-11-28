@@ -17,3 +17,4 @@ MonoBehaviour:
   type: 0
   description: This is a piece of wood
   value: 1
+  stackable: 1

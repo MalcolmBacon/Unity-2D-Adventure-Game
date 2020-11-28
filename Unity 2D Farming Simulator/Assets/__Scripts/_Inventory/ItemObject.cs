@@ -17,7 +17,8 @@ public abstract class ItemObject : ScriptableObject
     public ItemType type;
     [TextArea(15, 20)]
     public string description;
-    public float value;
+    public int value;
+    public bool stackable = true;
 }
 [System.Serializable]
 public class Item

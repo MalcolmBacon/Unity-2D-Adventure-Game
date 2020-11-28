@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeCuttable : PickupItemSpawn
+public class TreeCuttable : PickupItem
 {
     public void CutDownTree()
     {

@@ -2,29 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : IInteractable
+public class _Interactable : MonoBehaviour
 {
+    public GameObject highlighter;
     public bool canInteractWith { get; set; }
-    public Interactable()
+    public bool playerInRange { get; set; }
+    public _Interactable()
     {
         canInteractWith = true;
+        playerInRange = false;
     }
-
-    public void Interact(PopupSystem pop, string dialog)
+    public void Highlight(GameObject objectToHighlight)
+    {
+        if (highlighter == null)
+        {
+            throw new System.Exception("Highlighter not assigned in inspector");
+        }
+        if (canInteractWith)
+        {
+            highlighter.SetActive(true);
+            highlighter.transform.position = objectToHighlight.transform.position + Vector3.up * 0.8f;
+        }
+    }
+    public void Hide()
+    {
+        if (highlighter == null)
+        {
+            throw new System.Exception("Highlighter not assigned in inspector");
+        }
+        highlighter.SetActive(false);
+    }
+    public virtual void Interact()
+    {
+    }
+    public virtual void Interact(string dialogue)
+    {
+        Debug.Log(dialogue);
+    }
+    public virtual void Interact(PopupSystem pop, string dialog)
     {
         pop.PopUp(dialog);
     }
-    public void Interact(ref bool chestIsOpened, GameObject closedChest, GameObject openChest)
-    {
-        if (!chestIsOpened)
-        {
-            canInteractWith = false;
-            chestIsOpened = true;
-            closedChest.SetActive(false);
-            openChest.SetActive(true);
-        }
-    }
-    public void Interact(GameObject panel)
+    public virtual void Interact(GameObject panel)
     {
         if (panel.activeInHierarchy)
         {
@@ -35,9 +54,15 @@ public class Interactable : IInteractable
             panel.SetActive(true);
         }
     }
-
-    public void Interact(string dialogue)
+    public virtual void Interact(FloatObject currentPlayerHealth, Observer playerHealthObserver)
     {
-        Debug.Log(dialogue);
+        currentPlayerHealth.runTimeValue = currentPlayerHealth.maxRunTimeValue;
+        playerHealthObserver.Raise();
+    }
+    public virtual void Interact(GameObject closedChest, GameObject openChest)
+    {
+        canInteractWith = false;
+        closedChest.SetActive(false);
+        openChest.SetActive(true);
     }
 }
