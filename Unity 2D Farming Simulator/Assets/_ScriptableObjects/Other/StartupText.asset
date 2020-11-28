@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3561006d8303534eb87a443b0424dc3, type: 3}
   m_Name: StartupText
   m_EditorClassIdentifier: 
-  text: 'Welcome to my game! Press "E" to open your inventory. Press "Space" to attack.
-    Press "Right Click" to interact with certain world objects. You can recover hearts
-    by sleeping in your bed. '
+  text: 'Welcome to my game! Use the "WASD" keys to move the player. Press "E" to
+    open your inventory. Press "Space" to attack. Press "Right Click" to interact
+    with certain world objects. You can recover hearts by sleeping in your bed. '

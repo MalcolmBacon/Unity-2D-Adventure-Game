@@ -43,7 +43,6 @@ public class Enemy : MonoBehaviour
     }
     private void TakeDamage(float damage)
     {
-        Debug.Log("In take damage");
         health -= damage; // / 2);
         if (health <= 0)
         {
@@ -68,7 +67,6 @@ public class Enemy : MonoBehaviour
     }
     private void SpawnPickupItems()
     {
-        Debug.Log("In spawn pickup items");
         if (objectDestroyedPickupItem != null)
         {
             objectDestroyedPickupItem.SpawnPickupItems();

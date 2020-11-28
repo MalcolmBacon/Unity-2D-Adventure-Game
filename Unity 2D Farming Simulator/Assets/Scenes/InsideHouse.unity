@@ -2378,6 +2378,10 @@ PrefabInstance:
       propertyPath: dialog
       value: 
       objectReference: {fileID: 11400000, guid: f2a01ce0e5f648f49ac7ac75c5118f56, type: 2}
+    - target: {fileID: 1075195862994361492, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 450d5ac0f9120e74ebd736be7c4871ec, type: 2}
     - target: {fileID: 1075195862994361494, guid: 82e93915c2d5980478064d3e1cfb7ce8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7

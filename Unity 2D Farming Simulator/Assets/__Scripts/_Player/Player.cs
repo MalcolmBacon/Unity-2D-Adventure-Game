@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     public Vector2Object startingPosition;
     public BoolObject gameHasStarted;
     public TextObject dialog;
+    public InventoryObject inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,7 +110,8 @@ public class Player : MonoBehaviour
         }
         else 
         {
-            this.gameObject.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
+            inventory.Clear();
         }
     }
     private IEnumerator KnockbackCoroutine(float knockbackTime)
